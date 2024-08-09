@@ -1,0 +1,292 @@
+
+::-webkit-scrollbar {
+    width: 1.3rem;
+}
+
+::-webkit-scrollbar-thumb {
+    background: rgb(68, 68, 68);
+    border-radius: 100vw;
+    margin-block: .3em;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+    text-decoration: none;
+    border: none;
+    outline: none;
+    scroll-behavior: smooth;
+}
+
+:root {
+    --bg-color: rgb(0, 0, 0);
+    --sec-bg-color: rgb(41, 41, 41);
+    --text-color: white;
+    --main-color: rgb(63, 63, 63);
+
+}
+
+html{
+    font-size: 62.5%;
+    overflow-x: hidden;
+}
+
+body{
+    background-color: var(--bg-color);
+    color: var(--text-color);
+}
+
+
+section{
+    min-height: 100vh;
+    padding: 10rem 9% 2rem;
+}
+
+.header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 2rem 9%;
+    background-color: var(--bg-color);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+}
+
+.header.sticky {
+    border-bottom: .1rem solid rgb(0, 0, 0, .2);
+}
+
+.logo{
+    font-size: 2.5rem;
+    color: var(--text-color);
+    font-weight: 600;
+    cursor: default;
+}
+
+.menu a {
+    font-size: 2rem;
+    color: var(--text-color);
+    margin-left: 3rem;
+}
+
+.menu a:hover,
+.menu a.active {
+    transition: .5s ease-out;
+    color: var(--main-color);
+}
+
+#menu-icon {
+    font-size: 3.6rem;
+    color: var(--text-color);
+    display: none;
+}
+
+
+.menu a.logout-btn:hover, .menu a.logout-btn.active {
+    transition: .5s ease-out;
+    color: red;
+}
+
+.home {
+    display: flex;
+    justify-content:  center;
+    align-items: center;
+}
+
+.home-img {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.home-img img {
+    width: 25vw;
+    height: 25vw;
+    border-radius: 90%
+}
+
+.home-content h3{
+    font-size: 6.2rem;
+    font-weight: 700;
+}
+
+
+span {
+    color: var(--main-color);
+}
+
+.heading {
+    text-align: center;
+    font-size: 4.5rem;
+}
+
+.trailer {
+    position: absolute;
+    width: 100%;
+    height: 100%; /* Cover the entire viewport */
+    z-index: 4;
+    visibility: visible;
+    object-fit: cover;
+}
+.trailer-layer {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(rgba(0,0,0, .1), var(--main-color));
+    opacity: 50%;
+    z-index: -1;
+}
+
+.stock {
+    background-color: var(--sec-bg-color);
+}
+
+.stock h2 {
+    margin-bottom: 3rem;
+}
+
+.stock form {
+    max-width: 70rem;
+    margin: .5rem auto;
+    text-align: center;
+    margin-bottom: 4rem;
+}
+
+.stock form .input-box {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.stock form .input-box input,
+.stock form select {
+    width: 100%;
+    height: 50%;
+    padding: 1.5rem;
+    font-size: 1.6rem;
+    color: var(--text-color);
+    background-color: var(--bg-color);
+    border-radius: .8rem;
+    margin: .5rem 0;
+}
+
+.stock form .input-box input,
+.stock form select {
+    width: 49%;
+}
+
+
+.stock form #product-info-change input{
+    width: 100%;
+    height: 50%;
+    padding: 1.5rem;
+    font-size: 1.6rem;
+    color: var(--text-color);
+    background-color: var(--bg-color);
+    border-radius: .8rem;
+    margin: .5rem 0;
+}
+
+.stock form .input-box-remove input{
+    width: 50%;
+    height: 50%;
+    padding: 1.5rem;
+    font-size: 1.6rem;
+    color: var(--text-color);
+    background-color: var(--bg-color);
+    border-radius: .8rem;
+    margin: .5rem 0;
+}
+
+.stock form .product-name-remove{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+#stock-infos i:hover {
+    transition: .6s ease;
+    transform: scale(1.2);
+    color: var(--main-color);
+}
+
+.btn {
+    display: inline-block;
+    padding: 1rem 2.8rem;
+    background-color: var(--main-color);
+    border-radius: 4rem;
+    box-shadow: 0 0 1rem var(--main-color);
+    font-size: 1.6rem;
+    color: white;
+    letter-spacing: .1rem;
+    font-weight: 600;
+}
+
+/**/
+
+@media (max-width: 1200px) {
+    html {
+        font-size: 55%;
+    }
+
+}
+
+@media (max-width: 991px) {
+    .header {
+        padding: 2rem 3%;
+    }
+
+    section {
+        padding: 10rem 3% 2rem;
+    }
+}
+
+@media (max-width: 768px) {
+    #menu-icon {
+        display: block;
+    }
+
+    .menu {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        padding: 1rem 3%;
+        background: var(--bg-color);
+        border-top: .1rem solid rgba(0,0,0, .2);
+        box-shadow: 0 .5rem 1rem rgba(0,0,0, .2);
+        display: none;
+    }
+
+    .menu.active {
+        display: block;
+    }
+
+    .menu a {
+        display: block;
+        font-size: 2rem;
+        margin: 3rem 0;
+    }
+
+    .home {
+        flex-direction: column;
+    }
+
+    .home-content h3 {
+        font-size: 8rem;
+    }
+    
+}
+
+@media (max-width: 450px) {
+    html {
+        font-size: 40%;
+    }
+
+}
